@@ -6,8 +6,10 @@
     <div class="alert_from">
       <div class="alert_main">
         <div class="alert_title_box el-message-box__header">
-          <div class="el-message-box__title"> {{ title }} </div>
-          <i class="alert_icon_close el-message-box__close el-icon-close" @click=""></i>
+          <slot name="alert_title">
+            <div class="el-message-box__title"> {{ title }} </div>
+            <i class="alert_icon_close el-message-box__close el-icon-close" @click=""></i>
+          </slot>
         </div>
         <div class="alert_box">
           <slot>
@@ -17,7 +19,7 @@
         <div class="el-message-box__btns" v-show="btnsOff">
           <slot name="alert_btns">
             <el-button v-show="cancelOff" @click="cancelAction(false)">{{ cancelTitle }}</el-button>
-            <el-button v-show="finishOff" type="primary" @click="" :loading="loadingOff">{{ finishTitle }}</el-button>
+            <el-button v-show="finishOff" type="primary" @click="finishAction" :loading="loadingOff">{{ finishTitle }}</el-button>
           </slot>
         </div>
       </div>
@@ -51,7 +53,7 @@
       },
       finish : {
         type : Object,
-          
+
       },
       btnsOff : {
         type : Boolean,
@@ -69,10 +71,10 @@
     },
     methods : {
       cancelAction : () => {
-
+        this.$emit('alert_cancel');
       },
-      confirmAction : () => {
-
+      finishAction : () => {
+        this.$emit('alert_finish');
       },
     }
   }

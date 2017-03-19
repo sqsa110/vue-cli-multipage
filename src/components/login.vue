@@ -2,9 +2,13 @@
   <div class="login">
     <el-button @click="open5">登录</el-button>
     <fd_alert title="登录" v-if="login_show">
+      <div slot="alert_title" class="login_title_main">
+        <a href="javascript:;" @click="setActive('login')" class="login_title_name login_title_login" :class="[ active == 'login' ? 'active' : '' ]"> 登陆 </a>
+        <a href="javascript:;" @click="setActive('register')" class="login_title_name login_title_register" :class="[ active == 'register' ? 'active' : '' ]"> 注册 </a>
+      </div>
       <div class="login_box">
         <div class="login_input_main">
-          <h5 class=" login_title">用户名:</h5>
+          <h5 class="login_main_title">用户名:</h5>
           <div class="login_input">
             <el-input v-model="username.username_text" placeholder="请输入用户名" v-bind:id="username.username_title" name="username" v-bind:autofocus="true"></el-input>
           </div>
@@ -26,7 +30,7 @@
       </div>
       <div class="login_box">
         <div class="login_input_main">
-          <h5 class="login_title">密码:</h5>
+          <h5 class="login_main_title">密码:</h5>
           <div class="login_input">
             <el-input type="password" v-model="passwd.passwd_text" placeholder="请输入密码" v-bind:id="passwd.passwd_title" name="passwd"></el-input>
           </div>
@@ -45,6 +49,18 @@
           v-show="passwd.errorOff"
           show-icon>
         </el-alert>
+      </div>
+      <div class="login_code" v-if="login_code_off">
+        <h5 class="login_main_title login_code_main">
+          <img class="login_code_img" src="/static/img/login/code.jpg" alt="验证码" />
+        </h5>
+        <!--
+        <img class="login_title login_code_img" src="/static/img/login/code.jpg" alt="验证码" />
+        <h5 class="login_title">验证码:</h5>
+        -->
+        <div class="login_code_input login_input">
+          <el-input type="text" v-model="code" placeholder="请输入验证码" id="login_code" name="login_code"></el-input>
+        </div>
       </div>
     </fd_alert>
     <!--
@@ -113,7 +129,7 @@
     name : 'login',
     data : () => {
       return {
-        login_show : false,
+        login_show : true,
         username : {
           username_text : '',
           username_title : 'username',
@@ -126,6 +142,9 @@
           successOff : false,
           errorOff : false
         },
+        login_code_off : true,
+        code : '',
+        active : 'login'
       }
     },
     methods : {
@@ -177,6 +196,9 @@
             message : '取消输入'
           });
         });
+      },
+      setActive : function(str){
+        this.active = str;
       }
     },
     components : {
@@ -187,44 +209,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .mask {
-    position:fixed;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    opacity:.5;
-    background:#000;
-  }
-  .login_from {
-    position : fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    text-align:center;
-  }
-  .login_from:after {
-    content : '';
-    display : inline-block;
-    height:100%;
-    width:0;
-    vertical-align:middle;
-  }
-  .login_main {
-    text-align:left;
-    display:inline-block;
-    vertical-align:middle;
-    background-color:#fff;
-    width:420px;
-    border-radius:3px;
-    font-size:16px;
-    padding:0 20px 20px;
-    overflow:hidden;
-    -webkit-backface-visibility:hidden;
-    backface-visibility:hidden;
-  }
-  .login_title {
+  .login_main_title {
     display:inline-block;
     width:15%;
     text-align:justify;
@@ -235,5 +220,29 @@
     display:inline-block;
     width:80%;
   }
-
+  .login_code_main {
+    vertical-align:middle;
+  }
+  .login_code_main:before {
+    content : '';
+  }
+  .login_code_img {
+    width :100%;
+  }
+  .login_title_main {
+    font-size : 0px;
+  }
+  .login_title_name {
+    display : inline-block;
+    background-color:#4db3ff;
+    width : 48%;
+    padding : 10px 0;
+    text-align : center;
+    font-size : 16px;
+    color:#fff;
+  }
+  .active {
+    background-color:#1d90e6;
+    font-weight:900;
+  }
 </style>
