@@ -63,6 +63,7 @@
         </div>
       </div>
     </fd_alert>
+
     <!--
     <div class="mask" v-if="login_show">
 
@@ -204,8 +205,20 @@
       cancel () {
         this.login_show = false;
       },
-      finish () {
+      finish (data) {
         this.login_show = false;
+        if (data && data.code == 1000) {
+          this.$message({
+            showClose : true,
+            message : '登陆成功!'
+          });
+        } else {
+          this.$message({
+            showClose : true,
+            message : '用户名或密码错误！',
+            type : 'error'
+          });
+        }
       }
     },
     events : {
