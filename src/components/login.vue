@@ -1,7 +1,7 @@
 <template>
   <div class="login">
-    <el-button @click="open5">登录</el-button>
-    <fd_alert title="登录" v-if="login_show">
+    <el-button @click="open5" >登录</el-button>
+    <fd_alert title="登录" @alert_cancel="cancel" @alert_finish="finish" :showOff="login_show" :cancelOff="false" finishTitle="登录">
       <div slot="alert_title" class="login_title_main">
         <a href="javascript:;" @click="setActive('login')" class="login_title_name login_title_login" :class="[ active == 'login' ? 'active' : '' ]"> 登陆 </a>
         <a href="javascript:;" @click="setActive('register')" class="login_title_name login_title_register" :class="[ active == 'register' ? 'active' : '' ]"> 注册 </a>
@@ -129,7 +129,7 @@
     name : 'login',
     data : () => {
       return {
-        login_show : true,
+        login_show : false,
         username : {
           username_text : '',
           username_title : 'username',
@@ -178,6 +178,7 @@
       },
       open5 () {
         this.login_show = !this.login_show;
+      //  this.login_show = true;
       },
       open3 () {
         this.$prompt('请输入邮箱','提示',{
@@ -197,9 +198,17 @@
           });
         });
       },
-      setActive : function(str){
+      setActive (str){
         this.active = str;
+      },
+      cancel () {
+        this.login_show = false;
+      },
+      finish () {
+        this.login_show = false;
       }
+    },
+    events : {
     },
     components : {
       fd_alert
@@ -208,6 +217,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<!--
 <style scoped>
   .login_main_title {
     display:inline-block;
@@ -240,9 +250,16 @@
     text-align : center;
     font-size : 16px;
     color:#fff;
+    text-decoration-line:none;
   }
   .active {
     background-color:#1d90e6;
     font-weight:900;
   }
 </style>
+-->
+
+<style lang="stylus" rel="stylesheet/stylus">
+  @import "login.styl";
+</style>
+

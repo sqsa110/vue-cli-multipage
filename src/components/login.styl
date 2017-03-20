@@ -1,0 +1,47 @@
+radius-size = 5px
+.login
+  .login_main_title
+    display inline-block
+    width 15%
+    text-align justify
+    text-justify distribute-all-lines
+    text-align-last justify
+
+  .login_input
+    display inline-block
+    width 80%
+
+  .login_code_main
+    vertical-align middle
+
+  .login_code_main:before
+    content ''
+
+  .login_code_img
+    width 100%
+
+  .login_title_main
+    font-size 0px
+
+  .login_title_name
+    display inline-block
+    background-color #4db3ff
+    width 50%
+    padding 10px 0
+    text-align center
+    font-size 16px
+    color #fff
+    text-decoration-line none
+    &:first-of-type
+      border-top-left-radius radius-size
+      border-bottom-left-radius radius-size
+
+    &:last-of-type
+      border-top-right-radius radius-size
+      border-bottom-right-radius radius-size
+
+
+  .active
+    background-color #1d90e6
+    font-weight 900
+

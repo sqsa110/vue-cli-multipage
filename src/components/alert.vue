@@ -1,29 +1,32 @@
 <template>
-  <div class="fd_alert">
-    <div class="alert_mask" @click="cancelAction(true)">
-
-    </div>
-    <div class="alert_from">
-      <div class="alert_main">
-        <div class="alert_title_box el-message-box__header">
-          <slot name="alert_title">
-            <div class="el-message-box__title"> {{ title }} </div>
-            <i class="alert_icon_close el-message-box__close el-icon-close" @click=""></i>
-          </slot>
+  <div>
+    <transition name="fade">
+      <div class="fd_alert" v-if="showOff">
+        <div class="alert_mask" @click="cancelAction(false)">
         </div>
-        <div class="alert_box">
-          <slot>
-            <p>这里是默认文本</p>
-          </slot>
-        </div>
-        <div class="el-message-box__btns" v-show="btnsOff">
-          <slot name="alert_btns">
-            <el-button v-show="cancelOff" @click="cancelAction(false)">{{ cancelTitle }}</el-button>
-            <el-button v-show="finishOff" type="primary" @click="finishAction" :loading="loadingOff">{{ finishTitle }}</el-button>
-          </slot>
+        <div class="alert_from" @click="cancelAction(false)">
+          <div class="alert_main">
+            <div class="alert_title_box el-message-box__header">
+              <slot name="alert_title">
+                <div class="el-message-box__title"> {{ title }} </div>
+                <i class="alert_icon_close el-message-box__close el-icon-close" @click=""></i>
+              </slot>
+            </div>
+            <div class="alert_box">
+              <slot>
+                <p>这里是默认文本</p>
+              </slot>
+            </div>
+            <div class="el-message-box__btns" v-show="btnsOff">
+              <slot name="alert_btns">
+                <el-button v-if="cancelOff" @click="cancelAction(false)">{{ cancelTitle }}</el-button>
+                <el-button v-if="finishOff" type="primary" :class="[cancelOff ? '' : 'block_btn']" @click="finishAction" :loading="loadingOff">{{ finishTitle }}</el-button>
+              </slot>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -62,25 +65,33 @@
       maskClickOff : {
         type : Boolean,
         default : true,
+      },
+      showOff : {
+        type : Boolean,
+        default : false
       }
     },
     data : () => {
       return {
-          loadingOff : false,
+        loadingOff : false,
       }
     },
     methods : {
-      cancelAction : () => {
-        this.$emit('alert_cancel');
+      cancelAction (){
+        this.$emit('alert_cancel',false);
       },
-      finishAction : () => {
-        this.$emit('alert_finish');
+      finishAction (){
+        this.$emit('alert_finish',false);
       },
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang="stylus" rel="stylesheet/stylus">
+  @import "alert.styl"
+</style>
+<!--
 <style scoped>
   .alert_mask {
     position:fixed;
@@ -118,9 +129,11 @@
     overflow:hidden;
     -webkit-backface-visibility:hidden;
     backface-visibility:hidden;
+    border-radius:10px;
   }
   .alert_box {
     padding:20px 20px 0;
   }
 
 </style>
+-->
