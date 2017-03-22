@@ -5,7 +5,7 @@
         <div class="alert_mask" @click="cancelAction(false)">
         </div>
         <div class="alert_from" @click="cancelAction(false)">
-          <div class="alert_main">
+          <div class="alert_main" @click.stop>
             <div class="alert_title_box el-message-box__header">
               <slot name="alert_title">
                 <div class="el-message-box__title"> {{ title }} </div>
