@@ -1,7 +1,4 @@
 <template>
-  <!--
-  <el-input type="password" class="sdfsdf" v-model="passwd.passwd_text" placeholder="请输入密码" v-bind:id="passwd.passwd_title" name="passwd"></el-input>
-  -->
   <div class="el-input">
     <input :type="text" :name="" :placeholder="" :autocomplete="off" :class="" :id="" v-model="" />
   </div>

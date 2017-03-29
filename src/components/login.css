@@ -39,6 +39,9 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+.login .login_box {
+  margin-bottom: 10px;
+}
 .login .active {
   background-color: #1d90e6;
   font-weight: 900;
