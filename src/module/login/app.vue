@@ -1,22 +1,29 @@
 <template>
   <div id="login">
-  <!--  <el-button @click="visible = true">按钮</el-button>   -->
-    <login></login>
+
+    <fd_header></fd_header>
+    <fd_login></fd_login>
+    <fd_footer></fd_footer>
+
   </div>
 </template>
-<script type="application/javascript" src="/static/js/lib/jquery.min.js"></script>
+
 <script>
-  import login from '../../components/login';
+  // <script src="/static/font/iconfont.js">
+  import fd_login from '../../components/login';
+  import fd_header from '../../components/header/header';
+  import fd_footer from '../../components/footer/footer';
+
   export default {
-    name : 'app',
+    name : 'login',
     data () {
       return {
-        visible:false
       }
     },
-    components : {login}   //components
+    components : {fd_login,fd_header,fd_footer}   //components components
   }
 </script>
+
 <style>
 
 </style>

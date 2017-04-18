@@ -1,0 +1,30 @@
+#fd_header {
+  position: relative;
+  overflow: auto;
+  background: #0e0;
+  height: 25px;
+  padding: 5px 0;
+}
+#fd_header .icon {
+  font-size: 2.5rem;
+  color: #fff;
+}
+.goback,
+.gohome {
+  position: absolute;
+  top: 5px;
+}
+.goback {
+  left: 10px;
+}
+.gohome {
+  right: 10px;
+}
+.header_title {
+  font-size: 1.6rem;
+  height: 100%;
+  line-height: 25px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}

@@ -6,13 +6,14 @@ Vue.use(vueRouter);
 let routers = new vueRouter({
   routes : [{
     path : '/',
-    redirect : '/login'
+    redirect : '/info'
   },{
-    path : '/login',
-    component : (reslove) => require(['./app'],reslove)
+    path : '/info',
+    component : (reslove) => require(['./info'],reslove)
   },{
     path : '/index',
-    component : (reslove) => require(['./app'],reslove)
+    component : (reslove) => require(['./index'],reslove)
+  //  component : require('./index')
   }]
 });
 

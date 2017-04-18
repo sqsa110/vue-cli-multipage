@@ -1,3 +1,4 @@
+body,
 div,
 ul,
 ol,
@@ -20,10 +21,21 @@ b {
   margin: 0;
   padding: 0;
 }
+html,
+body {
+  font-size: 10px;
+}
 ul,
 ol {
   list-style-type: none;
 }
 .fd_border_red {
   border-color: #f00;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
