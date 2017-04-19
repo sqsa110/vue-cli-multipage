@@ -16,8 +16,27 @@ em,
 input,
 textarea,
 button,
+select,
+option,
+label,
+form,
 a,
-b {
+b,
+footer,
+header,
+i,
+svg,
+use,
+dd,
+dt,
+dl,
+table,
+tr,
+td,
+thead,
+tbody,
+tfoot,
+th {
   margin: 0;
   padding: 0;
 }
@@ -25,9 +44,15 @@ html,
 body {
   font-size: 10px;
 }
+body {
+  font-family: arial;
+}
 ul,
 ol {
   list-style-type: none;
+}
+a {
+  text-decoration-line: none;
 }
 .fd_border_red {
   border-color: #f00;

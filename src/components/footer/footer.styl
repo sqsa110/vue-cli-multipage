@@ -1,68 +1,57 @@
-.fade-enter-active, .fade-leave-active
-  transition opacity .5s
+//导航栏高度
+$fd_footer_nav_height = 39px
+//导航栏背景色
+$fd_footer_nav_background_color = #00ee00
+//导航栏字体色
+$fd_footer_nav_font_color = #fff
+//导航栏选中状态字体色
+$fd_footer_nav_font_active_color = #ff7400
+//导航栏选中状态背景色
+$fd_footer_nav_font_active_background = #6ff76f
+//导航栏数字标记大小
+$fd_footer_nav_num_height = 20px
 
-.fade-enter, .fade-leave-active
-  opacity 0
+#fd_footer
+  .fd_footer_nav_main
+    position fixed
+    bottom 0
+    width 100%
+    height $fd_footer_nav_height
+    font-size 0
+    background-color $fd_footer_nav_background_color
+  .fd_footer_fill
+    height $fd_footer_nav_height
 
-.alert_mask
-  position fixed
-  left 0
-  top 0
-  width 100%
-  height 100%
-  opacity .5
-  background #000
-
-.alert_from
-  position fixed
-  top 0
-  bottom 0
-  left 0
-  right 0
-  text-align center
-  &:after
-    content ''
+.fd_footer_nav_main
+  a
+    color $fd_footer_nav_font_color
+  li
     display inline-block
-    height 100%
-    width 0
-    vertical-align middle
+    font-size 1.2rem
+    width 25%
+    text-align center
+    box-sizing border-box
+    border-left 1px solid #f76fbc
+    &:first-child
+      border-left none
+  .fd_footer_nav_icon,.icon
+    font-size 2rem
+  .active
+    color $fd_footer_nav_font_active_color
+  .fd_footer_nav_box
+    position relative
+  .fd_footer_nav_num
+    position absolute
+    top -7px
+    left 58%
+    height $fd_footer_nav_num_height
+    line-height $fd_footer_nav_num_height
+    width $fd_footer_nav_num_height
+    border-radius 50%
+    font-size 1.6rem
+    color #fff
+    background-color $fd_footer_nav_font_active_color
 
-.alert_main
-  text-align left
-  display inline-block
-  vertical-align middle
-  background-color #fff
-  width 70%
-  border-radius 3px
-  font-size 16px
-  padding 0 20px 20px
-  overflow hidden
-  backface-visibility hidden
-  border-radius 10px
-
-.alert_box
-  padding 20px 20px 0
-
-.block_btn
-  width 100%
-
-@media screen and (min-width:768px) and (max-width:1100px)
-  .d
-    width 100%
-
-@media screen and (min-width:500px) and (max-width:767px)
-  .d
-    width 100%
-
-@media screen and (min-width:390px) and (max-width:499px)
-  .d
-    width 100%
-
-@media screen and (min-width:350px) and (max-width:389px)
-  .d
-    width 100%
-
-
-@media screen and (min-width:300px) and (max-width:349px)
-  .d
-    width 100%
+.active
+  .fd_footer_nav_box
+    background-color $fd_footer_nav_font_active_background

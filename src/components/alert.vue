@@ -1,8 +1,41 @@
+<!--
+  版本  v0.0.1
+  作者  李**
+  作用  alert自定义弹窗
+  说明
+
+  api手册
+    1.共3个插槽，slot名称分别为 alert_title,alert_btns和默认
+
+      实例
+      <fd_alert>
+        <div slot="alert_title">我替换了标题栏</div>
+        <div>我替换了弹窗主体</div>
+        <div slot="alert_btns">我替换了按钮组</div>
+      </fd_alert>
+
+    2.参数表
+      showOff       弹窗显示开关  默认false
+      mask_off      遮着层开关    默认true
+      btnsOff       按钮组开关    默认true
+      cancelOff     取消按钮开关  默认false
+      finishOff     完成按钮开关  默认true
+      maskClickOff  遮着层按钮取消开关 默认true
+      title         标题文本
+      cancelTitle   取消按钮文本  默认为取消
+      finishTitle   完成按钮文本  默认为确认
+
+   3.点击状态栏后回调事件
+      取消按钮回调事件  alert_cancel
+      完成按钮回调事件  alert_finish
+
+-->
+
 <template>
   <div>
     <transition name="fade">
       <div class="fd_alert" v-if="showOff">
-        <div class="alert_mask" @click="cancelAction(false)">
+        <div class="alert_mask" @click="cancelAction(false)" v-show="mask_off">
         </div>
         <div class="alert_from" @click="cancelAction(false)">
           <div class="alert_main" @click.stop>
@@ -54,10 +87,6 @@
         type : String,
         default : '确认'
       },
-      finish : {
-        type : Object,
-
-      },
       btnsOff : {
         type : Boolean,
         default : true
@@ -69,6 +98,10 @@
       showOff : {
         type : Boolean,
         default : false
+      },
+      mask_off : {
+        type : Boolean,
+        default : true
       }
     },
     data : () => {

@@ -2,9 +2,13 @@
   <div>
     <div class="login_box">
       <div class="login_input_main">
-        <h5 class="login_main_title">用户名:</h5>
         <div class="login_input">
           <el-input v-model="username.username_text" placeholder="请输入用户名" v-bind:id="username.username_title" name="username" v-bind:autofocus="true"></el-input>
+          <div class="username_icon login_icon">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-yonghu"></use>
+            </svg>
+          </div>
         </div>
       </div>
       <el-alert
@@ -24,9 +28,13 @@
     </div>
     <div class="login_box">
       <div class="login_input_main">
-        <h5 class="login_main_title">密码:</h5>
         <div class="login_input finishInput">
           <el-input type="password" class="sdfsdf" v-model="passwd.passwd_text" placeholder="请输入密码" v-bind:id="passwd.passwd_title" name="passwd"></el-input>
+          <div class="password_icon login_icon">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-suo"></use>
+            </svg>
+          </div>
         </div>
       </div>
       <el-alert
@@ -81,5 +89,6 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "login.styl";
+  @import "login_main.styl";
 </style>
+

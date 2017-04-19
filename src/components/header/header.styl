@@ -11,6 +11,9 @@ $font_color = #fff
   background $header_background_color
   height $header_height
   padding $header_padding_top 0
+  -moz-box-shadow 0 0 16px 0 #ccc
+  -webkit-box-shadow 0 0 16px 0 #ccc
+  box-shadow 0 0 16px 0 #ccc
 
   .icon
     font-size 2.5rem
@@ -22,10 +25,12 @@ $font_color = #fff
 
 .goback
   left $header_margin
+  border-right:1px solid #ccc
 
 .gohome
   right $header_margin
-
+  border-left 1px solid #ccc
+  padding-left 7px
 .header_title
   font-size 1.6rem
   height 100%
@@ -33,5 +38,4 @@ $font_color = #fff
   width 100%
   text-align center
   color $font_color
-
 

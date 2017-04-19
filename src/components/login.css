@@ -1,3 +1,7 @@
+.login .login_main {
+  width: 80%;
+  margin: 30px auto 0;
+}
 .login .login_main_title {
   display: inline-block;
   width: 15%;
@@ -5,25 +9,15 @@
   text-justify: distribute-all-lines;
   text-align-last: justify;
 }
-.login .login_input {
-  display: inline-block;
-  width: 80%;
-}
-.login .login_code_main {
-  vertical-align: middle;
-}
-.login .login_code_main:before {
-  content: '';
-}
-.login .login_code_img {
-  width: 100%;
+.login .login_userinfo_main {
+  margin-top: 30px;
 }
 .login .login_title_main {
   font-size: 0px;
 }
 .login .login_title_name {
   display: inline-block;
-  background-color: #4db3ff;
+  background-color: #6ff76f;
   width: 50%;
   padding: 10px 0;
   text-align: center;
@@ -39,10 +33,7 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.login .login_box {
-  margin-bottom: 10px;
-}
 .login .active {
-  background-color: #1d90e6;
-  font-weight: 900;
+  background-color: #0e0;
+  font-weight: 500;
 }

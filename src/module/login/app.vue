@@ -1,9 +1,9 @@
 <template>
   <div id="login">
 
-    <fd_header></fd_header>
+    <fd_header>登录</fd_header>
     <fd_login></fd_login>
-    <fd_footer></fd_footer>
+    <fd_footer icon_off_3="2"></fd_footer>
 
   </div>
 </template>

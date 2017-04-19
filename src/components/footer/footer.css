@@ -1,76 +1,50 @@
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-.alert_mask {
+#fd_footer .fd_footer_nav_main {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  background: #000;
-}
-.alert_from {
-  position: fixed;
-  top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-.alert_from:after {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  width: 0;
-  vertical-align: middle;
-}
-.alert_main {
-  text-align: left;
-  display: inline-block;
-  vertical-align: middle;
-  background-color: #fff;
-  width: 70%;
-  border-radius: 3px;
-  font-size: 16px;
-  padding: 0 20px 20px;
-  overflow: hidden;
-  backface-visibility: hidden;
-  border-radius: 10px;
-}
-.alert_box {
-  padding: 20px 20px 0;
-}
-.block_btn {
   width: 100%;
+  height: 39px;
+  font-size: 0;
+  background-color: #0e0;
 }
-@media screen and (min-width: 768px) and (max-width: 1100px) {
-  .d {
-    width: 100%;
-  }
+#fd_footer .fd_footer_fill {
+  height: 39px;
 }
-@media screen and (min-width: 500px) and (max-width: 767px) {
-  .d {
-    width: 100%;
-  }
+.fd_footer_nav_main a {
+  color: #fff;
 }
-@media screen and (min-width: 390px) and (max-width: 499px) {
-  .d {
-    width: 100%;
-  }
+.fd_footer_nav_main li {
+  display: inline-block;
+  font-size: 1.2rem;
+  width: 25%;
+  text-align: center;
+  box-sizing: border-box;
+  border-left: 1px solid #f76fbc;
 }
-@media screen and (min-width: 350px) and (max-width: 389px) {
-  .d {
-    width: 100%;
-  }
+.fd_footer_nav_main li:first-child {
+  border-left: none;
 }
-@media screen and (min-width: 300px) and (max-width: 349px) {
-  .d {
-    width: 100%;
-  }
+.fd_footer_nav_main .fd_footer_nav_icon,
+.fd_footer_nav_main .icon {
+  font-size: 2rem;
+}
+.fd_footer_nav_main .active {
+  color: #ff7400;
+}
+.fd_footer_nav_main .fd_footer_nav_box {
+  position: relative;
+}
+.fd_footer_nav_main .fd_footer_nav_num {
+  position: absolute;
+  top: -7px;
+  left: 58%;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #ff7400;
+}
+.active .fd_footer_nav_box {
+  background-color: #6ff76f;
 }

@@ -1,7 +1,9 @@
 <template>
   <div class="login">
+    <!--
     <el-button @click="openLogin" >登录</el-button>
-    <fd_alert title="登录" @alert_cancel="cancel" @alert_finish="finish" :showOff="login_show" :cancelOff="true" finishTitle="登录">
+    -->
+    <div class="login_main">
       <div slot="alert_title" class="login_title_main">
         <a href="javascript:;" @click="setActive('login')" class="login_title_name login_title_login" :class="[ active == 'login' ? 'active' : '' ]"> 登陆 </a>
         <a href="javascript:;" @click="setActive('register')" class="login_title_name login_title_register" :class="[ active == 'register' ? 'active' : '' ]"> 注册 </a>
@@ -14,20 +16,19 @@
           <fd_register></fd_register>
         </li>
       </ul>
-    </fd_alert>
+    </div>
 
   </div>
 </template>
 
 <script>
-  import fd_alert from './alert'
   import fd_login_main from './login_main'
   import fd_register from './register'
   export default {
     name : 'login',
     data : () => {
       return {
-        login_show : false,
+        login_show : true,
         username : {
           username_text : '',
           username_title : 'username',
@@ -84,7 +85,7 @@
       }.bind(this));
     },
     components : {
-      fd_alert,fd_login_main,fd_register
+      fd_login_main,fd_register
     }
   }
 </script>
