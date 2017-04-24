@@ -94,6 +94,9 @@ a {
   border-color: #009b00;
   color: #009b00;
 }
+.fd_button_text button {
+  color: #ff7400;
+}
 div.input_clear {
   width: 0;
   height: 0;

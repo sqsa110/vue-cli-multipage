@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form onsubmit="javascript:return false;" auto-complete="off">
+    <form onsubmit="javascript:return false;" autocomplete="off">
       <div class="login_box">
         <div class="login_input_main">
           <div class="login_input fd_input">

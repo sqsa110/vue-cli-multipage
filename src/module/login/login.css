@@ -38,3 +38,39 @@ body {
 .login input {
   height: 3rem;
 }
+.login_box {
+  margin-bottom: 10px;
+}
+.login_box .login_input {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+}
+.login_box .login_input input {
+  text-indent: 2rem;
+}
+.login_box .login_code_main {
+  vertical-align: middle;
+}
+.login_box .login_code_main:before {
+  content: '';
+}
+.login_box .login_code_img {
+  width: 100%;
+}
+.login_box .login_icon {
+  position: absolute;
+  font-size: 1.8rem;
+  top: 0.8rem;
+  left: 0.7rem;
+  color: #ff7400;
+}
+.login_btn {
+  margin-top: 25px;
+}
+.login_find {
+  float: right;
+}
+.login_find button {
+  text-decoration: underline;
+}

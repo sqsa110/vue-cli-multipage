@@ -13,6 +13,9 @@ let routers = new vueRouter({
   },{
     path : '/register',
     component : (reslove) => require(['./router/register'],reslove)
+  },{
+    path : '/recoverpw',
+    component : (reslove) => require(['./router/recoverpw'],reslove)
   }]
 });
 
