@@ -53,7 +53,7 @@
                 <p class="fd_footer_nav_text">
                   {{ name_1 }}
                 </p>
-                <div v-show="num_1 > 0" class="fd_footer_nav_num"><stong>{{ num_1 }}</stong></div>
+                <div v-show="num_1 > 0" class="fd_footer_nav_num"><strong>{{ num_1 }}</strong></div>
               </div>
             </slot>
           </a>
@@ -71,7 +71,7 @@
                 <p class="fd_footer_nav_text">
                   {{ name_2 }}
                 </p>
-                <div v-show="num_2 > 0" class="fd_footer_nav_num"><stong>{{ num_2 }}</stong></div>
+                <div v-show="num_2 > 0" class="fd_footer_nav_num"><strong>{{ num_2 }}</strong></div>
               </div>
             </slot>
           </a>
@@ -89,7 +89,7 @@
                 <p class="fd_footer_nav_text">
                   {{ name_3 }}
                 </p>
-                <div v-show="num_3 > 0" class="fd_footer_nav_num"><stong>{{ num_3 }}</stong></div>
+                <div v-show="num_3 > 0" class="fd_footer_nav_num"><strong>{{ num_3 }}</strong></div>
               </div>
             </slot>
           </a>
@@ -107,7 +107,7 @@
                 <p class="fd_footer_nav_text">
                   {{ name_4 }}
                 </p>
-                <div v-show="num_4 > 0" class="fd_footer_nav_num"><stong>{{ num_4 }}</stong></div>
+                <div v-show="num_4 > 0" class="fd_footer_nav_num"><strong>{{ num_4 }}</strong></div>
               </div>
             </slot>
           </a>

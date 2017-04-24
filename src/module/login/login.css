@@ -1,13 +1,9 @@
+body {
+  background-color: #e4ffe4;
+}
 .login .login_main {
   width: 80%;
-  margin: 30px auto 0;
-}
-.login .login_main_title {
-  display: inline-block;
-  width: 15%;
-  text-align: justify;
-  text-justify: distribute-all-lines;
-  text-align-last: justify;
+  margin: 80px auto 0;
 }
 .login .login_userinfo_main {
   margin-top: 30px;
@@ -24,6 +20,8 @@
   font-size: 16px;
   color: #fff;
   text-decoration-line: none;
+  height: 2rem;
+  line-height: 2rem;
 }
 .login .login_title_name:first-of-type {
   border-top-left-radius: 5px;
@@ -36,4 +34,7 @@
 .login .active {
   background-color: #0e0;
   font-weight: 500;
+}
+.login input {
+  height: 3rem;
 }

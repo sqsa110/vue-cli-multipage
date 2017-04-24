@@ -32,7 +32,7 @@
         <div class="login_input_main">
           <div class="login_input finishInput fd_input">
             <el-input type="password" name="passwd" class="input_clear"></el-input>
-            <el-input type="password" @blur="passwd_check" auto-complete="passwd" v-model="passwd.text" placeholder="请输入密码" v-bind:id="passwd.title" name="passwd"></el-input>
+            <el-input type="password" @blur="passwd_check" auto-complete="new-password" v-model="passwd.text" placeholder="请输入密码" name="passwd"></el-input>
             <div class="password_icon login_icon">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-suo"></use>
@@ -52,6 +52,33 @@
           type="error"
           :closable="false"
           v-show="passwd.errorOff"
+          show-icon>
+        </el-alert>
+      </div>
+      <div class="login_box">
+        <div class="login_input_main">
+          <div class="login_input finishInput fd_input">
+            <el-input type="password" name="passwd2" class="input_clear"></el-input>
+            <el-input type="password" @blur="passwd2_check" auto-complete="new-password" v-model="passwd2.text" placeholder="请在输入密码" name="passwd2"></el-input>
+            <div class="password_icon login_icon">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-suo"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <el-alert
+          title="成功提示的文案"
+          type="success"
+          :closable="false"
+          v-show="passwd.successOff"
+          show-icon>
+        </el-alert>
+        <el-alert
+          :title="passwd2.error_text"
+          type="error"
+          :closable="false"
+          v-show="passwd2.errorOff"
           show-icon>
         </el-alert>
       </div>
@@ -80,7 +107,7 @@
         </el-alert>
       </div>
       <div class="login_box login_btn fd_fill_btn fd_success_btn">
-        <el-button @click="finish"  :loading="loading">登录</el-button>
+        <el-button @click="finish" :loading="loading">注册</el-button>
       </div>
     </form>
   </div>
@@ -131,6 +158,14 @@
           error_text : '',
           success : false
         },
+        passwd2 : {
+          text : '',
+          title : 'passwd2',
+          successOff : false,
+          errorOff : false,
+          error_text : '',
+          success : false
+        },
         login_code_off : true,
         code : {
           text : '',
@@ -150,14 +185,12 @@
         let data = {
           username : this.username,
           passwd : this.passwd,
-          passwd2 : this.passwd2,
           code : this.code
         };
         if (!this.login_code_off) {
           data.code.success = true;
-        };
-
-        this.$emit('login_finish',data);
+        }
+        this.$emit('register_finish',data);
       },
       username_check () {
         var username_text = this.username.text = this.username.text.trim();
@@ -179,6 +212,7 @@
         }
       },
       passwd_check () {
+
         var passwd_text = this.passwd.text = this.passwd.text.trim();
         var passwd = this.passwd;
 
@@ -190,6 +224,27 @@
           passwd.errOff = false;
           passwd.success = true;
           passwd.error_text = "";
+        }
+
+        if (this.passwd2.text != '' && this.passwd2.text === this.passwd.text ) {
+          passwd2.errOff = false;
+          passwd2.success = true;
+          passwd2.error_text = "";
+        }
+      },
+      passwd2_check () {
+        var passwd2_text = this.passwd2.text = this.passwd2.text.trim();
+        var passwd2 = this.passwd2;
+        var passwd_text = this.passwd.text;
+
+        if (passwd_text !== passwd2_text ) {
+          passwd2.errorOff = true;
+          passwd2.success = false;
+          passwd2.error_text = "两次输入的密码不一致";
+        } else {
+          passwd2.errOff = false;
+          passwd2.success = true;
+          passwd2.error_text = "";
         }
       },
       code_check () {
@@ -214,7 +269,7 @@
       var _this = this;
       $(this.$el).on('keydown','.finishInput' + ' input',function(ev){
         if (ev.keyCode == 13) {
-            this.finish();
+          this.finish();
         }
       }.bind(this));
     }
@@ -223,6 +278,6 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "login_main.styl";
+  @import "register_main.styl";
 </style>
 
