@@ -1,4 +1,7 @@
-# vue-cli多页面
+# vue-cli多页面+路由
+
+## 应用
+  stylus element-ui
 
 ## 更新
 1. css autoprefix的问题
