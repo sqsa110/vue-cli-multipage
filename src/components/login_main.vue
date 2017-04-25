@@ -109,7 +109,7 @@
       codeReg : {
         type : RegExp,
         default : function(){
-          return /^[0-9]{4}$/
+          return /^[0-9a-zA-Z]{4}$/
         }
       }
     },
@@ -167,8 +167,8 @@
         if (!this.nameReg.test(username_text)) {
           username.errorOff = true;
           username.success = false;
-          username.error_text = '请输入数字、字母、@、-、_、.字符'
-        } else if (username.length > username_lenth) {
+          username.error_text = '请输入数字、字母、@、-、_、.字符';
+        } else if (username.text.length < username_lenth) {
           username.errorOff = true;
           username.success = false;
           username.error_text = '用户名需大于6位'
@@ -201,7 +201,7 @@
         if (!this.codeReg.test(text)) {
           code.errorOff = true;
           code.success = false;
-          code.error_text = "请输入4位数字验证码";
+          code.error_text = "请输入4位数字和字母的验证码";
         } else {
           code.errOff = false;
           code.success = true;
@@ -214,7 +214,7 @@
       var _this = this;
       $(this.$el).on('keydown','.finishInput' + ' input',function(ev){
         if (ev.keyCode == 13) {
-            this.finish();
+          this.finish();
         }
       }.bind(this));
     }

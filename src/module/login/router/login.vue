@@ -5,6 +5,10 @@
 <script>
   import fd_login_main from '../../../components/login_main'
   import '../../../../static/js/lib/jQuery.md5';
+  var user_arr_test = [{
+    "user" : "aaaaaaa",
+    "passwd" : $.md5("aaaaaa6")
+  }];
   export default {
     name : 'login',
     data : () => {
@@ -16,8 +20,19 @@
       login_finish (data) {
         this.loading = true;
         setTimeout(function(){
+
           if (data.username.success && data.passwd.success && data.code.success) {
-            alert('登录成功！');
+            let off = false;
+
+            for (let i=0,maxi=user_arr_test.length;i<maxi;i++) {
+              if (user_arr_test[i].user == data.username.text && user_arr_test[i].passwd == $.md5(data.passwd.text)) {
+                off = true;
+                break;
+              }
+            }
+            if (off) {
+              alert('登录成功！');
+            }
           } else {
             this.show_warn_message('有内容输入不正确,请检查!');
           }

@@ -37,19 +37,23 @@
     },
     methods : {
       setActive (name) {
-        this._data.active = name;
+
         switch (name) {
           case 'login':
             this.title = '登录';
+            this._data.active = "login";
             break;
           case 'register':
             this.title = '注册';
+            this._data.active = name;
             break;
           case 'recoverpw':
             this.title = '找回密码';
+            this._data.active = name;
             break;
           default :
             this.title = '登录';
+            this._data.active = "login";
         }
       },
       go_recoverpw () {
@@ -67,19 +71,19 @@
       var name = $.getVueRouteName();
       this.setActive(name);
       /*
-      if (name == 'register') {
-        //设置注册按钮为active
-        this._data.active = 'register';
-        this.title = '登录'
-      } if (name == 'recoverpw') {
-        this._data.active = 'recoverpw';
-        this.title = '注册';
-      } else {
-        //默认设置登录为active
-        this._data.active = 'login';
-        this.title = '找回密码';
-      }
-      */
+       if (name == 'register') {
+       //设置注册按钮为active
+       this._data.active = 'register';
+       this.title = '登录'
+       } if (name == 'recoverpw') {
+       this._data.active = 'recoverpw';
+       this.title = '注册';
+       } else {
+       //默认设置登录为active
+       this._data.active = 'login';
+       this.title = '找回密码';
+       }
+       */
 
     },
     components : {fd_header,fd_footer}   //components components
