@@ -1,0 +1,23 @@
+$browser-default-font-size = 40px !default
+
+pxTorem($px)
+  return (1rem * ($px / $browser-default-font-size))
+
+font-dpr($font-size){
+  font-size $font-size
+
+  [data-dpr='2'] & {
+    font-size $font-size * 2
+  }
+
+  [data-dpr='3'] & {
+    font-size $font-size * 3
+  }
+}
+
+
+$fd_input_height = 3rem
+$fd_background_active = #58B7FF
+$fd_background = #20A0FF
+$fd_font_active = #F9FAFC
+$fc_background_3 = #1D8CE0

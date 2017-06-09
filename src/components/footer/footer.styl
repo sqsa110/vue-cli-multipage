@@ -1,5 +1,7 @@
+@import '../../assets/tools.styl'
+
 //导航栏高度
-$fd_footer_nav_height = 39px
+$fd_footer_nav_height = pxTorem(40px)
 //导航栏背景色
 $fd_footer_nav_background_color = #00ee00
 //导航栏字体色
@@ -9,14 +11,13 @@ $fd_footer_nav_font_active_color = #ff7400
 //导航栏选中状态背景色
 $fd_footer_nav_font_active_background = #6ff76f
 //导航栏数字标记大小
-$fd_footer_nav_num_height = 20px
+$fd_footer_nav_num_height = pxTorem(20px)
 
 #fd_footer
   .fd_footer_nav_main
     position fixed
     bottom 0
     width 100%
-    height $fd_footer_nav_height
     font-size 0
     background-color $fd_footer_nav_background_color
   .fd_footer_fill
@@ -27,7 +28,7 @@ $fd_footer_nav_num_height = 20px
     color $fd_footer_nav_font_color
   li
     display inline-block
-    font-size 1.2rem
+    font-size pxTorem(12px)
     width 25%
     text-align center
     box-sizing border-box
@@ -35,20 +36,20 @@ $fd_footer_nav_num_height = 20px
     &:first-child
       border-left none
   .fd_footer_nav_icon,.icon
-    font-size 2rem
+    font-size pxTorem(16px)
   .active
     color $fd_footer_nav_font_active_color
   .fd_footer_nav_box
     position relative
   .fd_footer_nav_num
     position absolute
-    top -7px
+    top pxTorem(-7px)
     left 58%
     height $fd_footer_nav_num_height
     line-height $fd_footer_nav_num_height
     width $fd_footer_nav_num_height
     border-radius 50%
-    font-size 1.6rem
+    font-size pxTorem(12px)
     color #fff
     background-color $fd_footer_nav_font_active_color
 
